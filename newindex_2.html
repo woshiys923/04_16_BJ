@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Memory Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+  <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Anton'>
+
+      <link rel="stylesheet" href="css/style_2.css">
+      <header>
+    <font face= "Comic Sans MS" color= "#686351">BOYS AND GIRLS</font>
+ </header>
+
+  
+</head>
+
+<body>
+
+  <a href = "newLevel.html" 
+   <div>
+    <img id="home" src= "Images/home_icon.png"
+     width= "70" height = "70"
+    />
+
+  </div>
+</a>
+
+  <a href = "L2_Video.html" 
+   <div>
+    <img id="back" src= "Images/back_icon.png"
+     width= "70" height = "70"
+    />
+
+  </div>
+</a>
+
+ <a href = "L3_video.html" 
+   <div>
+    <img id="go" src= "Images/go_icon.png"
+     width= "70" height = "70"
+    />
+
+  </div>
+</a>
+
+ <audio id="soundtrack" src="Audio/cool_L2.wav" type="audio/wav" autoplay loop>
+    </audio>
+
+  <button id="sound" >Sound</button>
+
+
+  <div class="wrap">
+<div class="game"></div>
+	
+	<div class="modal-overlay">
+		<div class="modal">
+			<h2 class="winner">You Rock!</h2>
+			<button class="restart">Play Again?</button>
+      <ul class="gogo">
+        <a href = "L3_video.html" 
+       <div>
+        <img id="next" src= "Images/gonext.png"
+     width= "120" height = "120"
+      />
+
+       </div>
+      </a>
+        
+      </ul>
+			
+		</div>
+	</div>
+  
+  </div><!-- End Wrap -->
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <script src="js/index_2.js"></script>
+        <style>
+
+        header {
+          padding: 12px;
+          color: #686351;
+          position: static;
+          font-size: 35px;
+          font-weight: bold;
+          z-index: 1;
+          text-align: center;
+          background: #f9bf73;
+          margin-top: 0px;
+          margin-left: 0px;
+        }
+
+         #sound{
+            width: 90px;
+            height:40px;
+            background: #f1941a;
+            z-index: 1;
+            float: right;
+            position: absolute;
+            font-size: 18px;
+            top: 20px;
+            right:20px;
+            }
+   
+
+         #back{
+          
+          z-index: 1;
+          top: 68px;
+          left: 30px;
+          position: absolute;
+          cursor: hand;
+        }
+
+         #go{
+          
+          z-index: 1;
+          bottom: 18px;
+          right: 30px;
+          position: absolute;
+          cursor: hand;
+        }
+
+         #home{
+          
+          z-index: 1;
+          top: 68px;
+          right: 30px;
+          position: absolute;
+          cursor: hand;
+        }
+
+  
+
+
+
+
+
+        
+    </style>
+
+    <script type="text/javascript">
+    var soundtrack;
+        soundtrack = document.getElementById ('soundtrack');
+    var toggle =1;
+        $('#sound').unbind('click').click(function(){
+                toggle = -toggle;
+                if(toggle==-1){
+
+                soundtrack.pause();
+                $('#sound').html('Unmute');
+            }
+            else if(toggle==1){
+                soundtrack.play();
+                $('#sound').html('Mute');
+            }
+            });
+    </script>
+
+</body>
+</html>

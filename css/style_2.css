@@ -1,0 +1,203 @@
+@import url(http://weloveiconfonts.com/api/?family=brandico);
+/* brandico */
+[class*="brandico-"]:before {
+  font-family: 'brandico', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: #f9bf73;
+  min-height: 100%;
+  font-family: "Arial", sans-serif;
+}
+
+
+.wrap {
+  position: relative;
+  height: 93%;
+  min-height: 500px;
+  padding-bottom: 7px;
+  padding-top: 3px;
+  padding-left:110px;
+  padding-right:110px;
+}
+
+.game {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-perspective: 500px;
+          perspective: 500px;
+  min-height: 100%;
+  height: 100%;
+}
+
+@-webkit-keyframes matchAnim {
+  0% {
+    background: #bcffcc;
+  }
+  100% {
+    background: white;
+  }
+}
+
+@keyframes matchAnim {
+  0% {
+    background: #7ea9df;
+  }
+  100% {
+    background: white;
+  }
+}
+.card {
+  float: left;
+  width: 16.66666%;
+  height: 25%;
+  padding: 5px;
+  text-align: center;
+  display: block;
+  -webkit-perspective: 500px;
+          perspective: 500px;
+  position: relative;
+  cursor: pointer;
+  z-index: 50;
+  -webkit-tap-highlight-color: transparent;
+}
+@media (max-width: 800px) {
+  .card {
+    width: 25%;
+    height: 16.666%;
+  }
+}
+.card .inside {
+  width: 100%;
+  height: 100%;
+  display: block;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: .4s ease-in-out;
+  transition: .4s ease-in-out;
+  background: #fefdf8;
+}
+.card .inside.picked, .card .inside.matched {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+.card .inside.matched {
+  -webkit-animation: 1.6s matchAnim ease-in-out;
+          animation: 1.6s matchAnim ease-in-out;
+  -webkit-animation-delay: .4s;
+          animation-delay: .4s;
+}
+.card .front, .card .back {
+  border: 0px solid black;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+.card .front img, .card .back img {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+  max-height: 100%;
+}
+.card .front {
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+}
+@media (max-width: 800px) {
+  .card .front {
+    padding: 5px;
+  }
+}
+@media (max-width: 800px) {
+  .card .back {
+    padding: 10px;
+  }
+}
+
+.modal-overlay {
+  display: none;
+  background: #7accc8
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.modal {
+  display: none;
+  position: relative;
+  width: 600px;
+  height: 400px;
+  max-height: 90%;
+  max-width: 90%;
+  min-height: 380px;
+  margin: 0 auto;
+  background: #f8f5ea;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  padding: 30px 10px;
+}
+.modal .winner {
+  font-size: 80px;
+  text-align: center;
+  font-family: "Anton", sans-serif;
+  color: #fba146;
+  text-shadow: 0px 3px 0 black;
+  top:30%;
+}
+
+.modal .restart {
+  font-family: "Anton", sans-serif;
+  margin: 30px auto;
+  padding: 20px 30px;
+  display: block;
+  font-size: 30px;
+  border: none;
+  background: #7accc8;
+  background: -webkit-linear-gradient(#4d4d4d, #222);
+  background: #f8ae63
+  top:65%;
+  border: 0px solid #222;
+  border-radius: 5px;
+  color: white;
+  text-shadow: 0px 1px 0 black;
+  cursor: pointer;
+}
+
+.modal .gogo {
+  margin: 20px auto;
+  text-align: center;
+}
+
+.modal .gogo a {
+  display: inline-block;
+  height: 120px;
+  width: 120px;
+  text-align: center;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+
+.modal .restart:hover {
+  background: -webkit-linear-gradient(#222, black);
+  background: linear-gradient(#222, black);
+}
+
+
+

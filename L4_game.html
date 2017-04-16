@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="Script/jigsawScript.js"></script>
+    <script type="text/javascript">
+
+
+
+        var game = null;
+        var imageID = "img1";
+        var totalRows = 3;
+        var totalColumns = 3;
+
+
+        function InitGame() {
+            LoadNewImage(imageID);
+        }
+
+        function LoadNewImage(imgID) {
+            imageID = imgID;
+            
+            SetRowsColumn();
+            
+            LoadGame();
+        }
+        
+        function LoadGame() {
+            var canvasID = "canJigsaw";
+
+            game = new jigsaw(canvasID, imageID, totalRows, totalColumns);
+
+            game.initDrawing();
+
+        }
+
+        function ShowPreview() {
+            if (game) {
+
+                game.showPreview();
+
+            }
+        }
+
+        function SetRowsColumn() {
+            var r1 = document.getElementById("rd1");
+            var r2 = document.getElementById("rd2");
+            var r3 = document.getElementById("rd3");
+
+            if (r1.checked) {
+                totalRows = 3;
+                totalColumns = 3;
+
+            }
+            else if (r2.checked) {
+                totalRows = 4;
+                totalColumns = 4;
+
+            }
+            else if (r3.checked) {
+                totalRows = 5;
+                totalColumns = 5;
+
+            }
+
+
+        }
+
+
+    </script>
+</head>
+<body onload="InitGame();">
+    <table>
+        <tr>
+            <td>
+                <div>
+                    <table cellpadding="6" cellspacing="6" width="100%" style = "font family: arial;">
+                        <tr>
+                            <td>
+                                <span>
+                                    <input id="rd1" type="radio" value="Easy" name="r1" onclick="InitGame();" />
+                                    Easy_3*3
+                                    <input id="rd2" type="radio" value="Medium" name="r1" onclick="InitGame();" checked />
+                                    Medium_4*4
+                                    <input id="rd3" type="radio" value="Hard" name="r1" onclick="InitGame();" />
+                                    Hard_5*5</span>
+                            </td>
+                            <td width="150px">
+                                <span >
+                                    <input type="button" value="Show Preview" onclick="ShowPreview()" height="30px" style= "border:grey solid 2px; background: white;"/>
+                                </span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div>
+                    <canvas id="canJigsaw" width="1092" height="677" style="border: #7accc8 solid 5px; background: #f8f5ea; " ></canvas>
+                </div>
+            </td>
+            <td width="90px">
+                &nbsp;
+            </td>
+            <td style="vertical-align: center;">
+                <div style="font-size:22px; color: black; text-align:center;">Double click on image to select.</div>
+                <div align="right" style="height: 650px; width: 290px; right: 20px; border: grey solid 5px; overflow: auto;">
+                    <div>
+                        <img id="img1" width="275" height="206" ondblclick="LoadNewImage(this.id);" src="Images/Puzzle/V1_family.png"></img>
+                    </div>
+                    <div>
+                        <img id="img2" width="275" height="206" ondblclick="LoadNewImage(this.id);" src="Images/Puzzle/V1_pregnant.png"></img>
+                    </div>
+                    <div>
+                        <img id="img3" width="275" height="206" ondblclick="LoadNewImage(this.id);" src="Images/Puzzle/V2_man.png"></img>
+                    </div>
+
+                     <div>
+                        <img id="img4" width="275" height="206" ondblclick="LoadNewImage(this.id);" src="Images/Puzzle/V2_woman.png"></img>
+                    </div>
+
+                    <div>
+                        <img id="img5" width="275" height="206" ondblclick="LoadNewImage(this.id);" src="Images/Puzzle/V2_girlgrow.png"></img>
+                    </div>
+
+                     <div>
+                        <img id="img6" width="275" height="206" ondblclick="LoadNewImage(this.id);" src="Images/Puzzle/V3_notouch.png"></img>
+                    </div>
+
+                    <div>
+                        <img id="img7" width="275" height="206" ondblclick="LoadNewImage(this.id);" src="Images/Puzzle/V3_secret.png"></img>
+                    </div>
+
+
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <a href = "newindex_3.html" 
+   <div>
+    <img id="back" src= "Images/back_icon.png"
+     width= "50" height = "50"
+    />
+
+  </div>
+</a>
+
+    <a href = "newLevel.html" 
+   <div>
+    <img id="home" src= "Images/home_icon.png"
+     width= "50" height = "50"
+    />
+
+  </div>
+</a>
+
+ <audio id="soundtrack" src="Audio/L4.wav" type="audio/wav" autoplay loop>
+    </audio>
+
+
+    <style>
+        body {
+          margin: 0 px;
+          padding:0 px;
+          background: #f8f5ea; 
+        }
+
+        header {
+          padding: 27px;
+          color: #686351;
+          position: static;
+          font-size: 51px;
+          font-weight: bold;
+          z-index: 1;
+          text-align: center;
+          background: #7accc8;
+          margin-top: -10px;
+          margin-left: -10px;
+          margin-right: -10px;
+        }
+
+   
+
+         #back{
+          
+          z-index: 1;
+          top: 2px;
+          right: 570px;
+          position: absolute;
+          cursor: hand;
+        }
+
+
+        #home{
+          
+          z-index: 1;
+          top: 2px;
+          right: 510px;
+          position: absolute;
+          cursor: hand;
+        }
+
+
+        #next{
+          
+          z-index: -1;
+          top: 600px;
+          right: 70px;
+          position: absolute;
+          cursor: hand;
+        }
+
+        #Level_01{
+
+          z-index: -1;
+          top: 216px;
+          left: 413.5px;
+          position: absolute;
+        }
+
+        #tablet{
+
+          z-index: -1;
+          top: 153px;
+          left: 250px;
+          position: absolute;
+        }
+
+
+
+
+
+
+        
+    </style>
+
+
+
+</body>
+</html>
