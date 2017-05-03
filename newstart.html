@@ -11,9 +11,10 @@
 <div id = "popup">
   <div id = "intro1">
     <div id = "title">Who are you?</div>
-    <div id ="exit"><img src = "Images/CLOSE.png" width= "40" height = "40"/></div>
+    <div id ="exit"><img src = "Images/close.png" width= "40" height = "40"/></div>
     <div id = "left">
         <img id = "parents" src = "Images/Parent user.png" width= "130" height = "146"/>
+       
     </div>
     <div id = "right">
         <img id = "kids" src = "Images/Kid user.png" width= "130" height = "146"/>
@@ -21,18 +22,15 @@
     </div>
   </div>
 
-
   <div id = "intro2">
-    <img id= "text_1" src = "Images/Introduction-for-parents.png" width = "505" heigh = "294"/>
-    <img id = "parents2" src = "Images/go-back.png" width= "40" height = "40"/>
+    <div id ="texts1">Baby Journey is a web-based application that designed to combine education videos with mini puzzle games and is intended to impart the basic knowledge of human reproduction, gender identity, and body privacy to young children aged from 5 to 10.</div>
+    <img id = "parents2" src = "Images/Parent icon.png" width= "120" height = "120"/>
   </div>
 
-
   <div id = "intro3">
-    <img id= "text_2" src = "Images/Introduction-for-kids.png" width = "505" heigh = "294"/>
-    <img id = "kids2" src = "Images/go-back.png" width= "40" height = "40"/>
-</div>
-
+    <div id ="texts2">Hi, welcome to Baby Journey! In this application, you can explore the knowledge of “Where do Babies Come from”, “Boys and Girls”, and “This is My Body” through watching cute cartoon videos and playing interesting mini games. Now let’s get started!</div>
+    <img id = "kids2" src = "Images/Kid icon.png" width= "120" height = "120"/>
+  </div>
 </div>
 
    <div>
@@ -44,8 +42,8 @@
 
    <a href = "newLevel.html" 
    <div>
-    <img id="play" src= "Images/play_2.png"
-     width= "120" height = "120"
+    <img id="play" src= "Images/play_icon.png"
+     width= "113" height = "113"
     />
 
   </div>
@@ -97,7 +95,7 @@
           right:19%;
           position: fixed;
           cursor: pointer;
-          width: 10%;
+          width: 7.6%;
           height: auto;
           padding: 0%;
           margin: 0%;
@@ -153,7 +151,6 @@
 
          
         }
-
         #popup{
         z-index: 500;
         bottom: 0%;
@@ -166,7 +163,7 @@
         left: 35%;
         width: 500px;
         height: 300px;
-        background: rgba(255, 255, 255, 0.8);
+        background: rgba(255, 255, 255, 0.75);
         display: none;
         }
 
@@ -181,7 +178,7 @@
          position: fixed ;
 
         }
-
+        
         #left{
           z-index: 10;
           position: absolute;
@@ -197,9 +194,8 @@
           
           z-index: 10;
           position:fixed;
-          bottom: 50%;
+          bottom: 38%;
           left: 40%;
-          cursor: pointer;
 
         }
 
@@ -207,8 +203,7 @@
           z-index: 10;
           position: fixed;
           right: 36%;
-          bottom: 50%;
-          cursor: pointer;
+          bottom: 38%;
         }
         #intro1{
 
@@ -219,36 +214,31 @@
         #intro3{
           display: none;
         }
-      
-
-        #title{
-          font-size: 170%;
+        #texts1{
+          
+          font-size: 120%;
           color: #404040;
           font-weight: bold;
           font-style: arial;
-          top: 24%;
-          right: 41%;
+          top: 30%;
+
+        }
+        #texts2{
+
+        }
+
+        #title{
+          font-size: 120%;
+          color: #404040;
+          font-weight: bold;
+          font-style: arial;
+          top: 30%;
         }
 
         #exit{
           position:fixed;
           right: 30%;
-          cursor: pointer;
 
-        }
-
-        #parents2{
-          position: absolute;
-          left: 90%;
-          bottom: 5%;
-          cursor: pointer;
-        }
-
-        #kids2{
-          position: absolute;
-          left: 90%;
-          bottom: 5%;
-          cursor: pointer;
         }
 
     
@@ -286,7 +276,7 @@
     setTimeout(function(){
   // call the plugin here
   $('#popup').fadeIn();
-},1000); // 1000ms = 1 second
+},1500); // 1000ms = 1 second
 
         $('#parents').unbind('click').click(function(){
           $('#intro1').fadeOut();

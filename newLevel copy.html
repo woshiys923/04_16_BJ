@@ -3,34 +3,14 @@
 <head> 
   <title> Game Level</title>
   <link rel = "stylesheet" type= "text/css" href = "style.css">
-  <script src="js/jquery-3.2.1.min.js"></script>
    <header>
     <font face= "Comic Sans MS" color= "#686351">BABY JOURNEY</font>
  </header>
 
 </head>
 <body>
-
-
-
-<div id = "popup">
-      <div id = "intro">
-    <img id= "text" src = "Images/Introduction-for-level.png" width = "505" heigh = "294"/>
-    <div id ="exit"><img src = "Images/CLOSE.png" width= "40" height = "40"/></div>
-  </div>
-
-
-</div>
-
-<div id = "question">
-   
-    <img src = "Images/question.png" width= "70" height = "70"/>
-
-</div>
-
-
-
   
+
 <a href = "start.html" 
    <div>
     <img id="back" src= "Images/back_icon.png"
@@ -190,51 +170,6 @@
           height: auto;
         }
 
-        #question{
-          
-          z-index: 1;
-          top: 13%;
-          right: 14%;
-          position: fixed;
-          cursor: hand;
-          max-width: 5%;
-          height: auto;
-
-        }
-
-
-
-        #popup{
-        z-index: 500;
-        bottom: 0%;
-        position: fixed;
-        margin-left: 0%;
-        padding: 0%;
-        margin-right: 0%;
-        right: 0%;
-        top: 25%;
-        left: 35%;
-        width: 500px;
-        height: 300px;
-        background: rgba(255, 255, 255, 0.85);
-        display: none;
-        }
-
-        #text{
-
-          position: absolute;
-          bottom: 0%;
-          cursor: pointer;
-        }
-
-
-        #exit{
-          position:fixed;
-          right: 30%;
-          cursor: pointer;
-
-        }
-
 
 
 
@@ -245,26 +180,13 @@
 
 
     <script>
-          
+          var canvas = document.getElementById ("gamelevel");
+          var context = canvas.getContext('2d');
 
-
-         $('#question').unbind('click').click(function(){
-          $('#popup').fadeOut();
-          $('#popup').fadeIn();
-        });
-
-        $('#intro').unbind('click').click(function(){
-          $('#intro').fadeOut();
-          $('#intro').fadeIn();
-        });
-
-
-        $('#exit').unbind('click').click(function(){
-          $('#popup').fadeOut();
-        });
           
  
           
+
 
 
     </script>
